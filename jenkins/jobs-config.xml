@@ -1,0 +1,53 @@
+<!-- 1. jenkins-spring-app-ci-job -->
+<project>
+    <actions></actions>
+    <description>Build and test the app.</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <com.coravy.hudson.plugins.github.GithubProjectProperty>
+            <projectUrl>https://github.com/RomChig/Jenkins-Spring-App/</projectUrl>
+        </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    </properties>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers></triggers>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.plugins.groovy.Groovy>
+            <groovyName>(Default)</groovyName>
+            <parameters></parameters>
+            <scriptParameters></scriptParameters>
+            <javaOpts></javaOpts>
+            <classPath></classPath>
+            <scriptSource class='hudson.plugins.groovy.FileScriptSource'>
+                <scriptFile>./jenkins/createJob.groovy</scriptFile>
+            </scriptSource>
+            <properties></properties>
+        </hudson.plugins.groovy.Groovy>
+        <hudson.tasks.Shell>
+            <command>echo Hello World</command>
+        </hudson.tasks.Shell>
+    </builders>
+    <publishers></publishers>
+    <buildWrappers></buildWrappers>
+    <scm class='hudson.plugins.git.GitSCM'>
+        <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+                <url>https://github.com/RomChig/Jenkins-Spring-App.git</url>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>main</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <configVersion>2</configVersion>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <gitTool>Default</gitTool>
+        <browser class='hudson.plugins.git.browser.GithubWeb'>
+            <url>https://github.com/RomChig/Jenkins-Spring-App/</url>
+        </browser>
+    </scm>
+</project>
