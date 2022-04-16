@@ -4,7 +4,7 @@ node {
     checkout scm
 
     stage 'check env'
-    sh "mvn -v"
+    sh "./mvnw -v"
     sh "java -version"
 
     stage 'test'
