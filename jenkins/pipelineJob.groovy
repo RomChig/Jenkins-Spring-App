@@ -1,9 +1,9 @@
-pipeline {
+pipeline{
     agent any
     stages {
-        stage('pull source') {
-            git url: 'https://github.com/RomChig/Jenkins-Spring-App.git', branch: 'main'
-        }
+//        stage('pull source') {
+//            git url: 'https://github.com/RomChig/Jenkins-Spring-App.git', branch: 'main'
+//        }
 
         stage('check maven & java version') {
             steps{

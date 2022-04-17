@@ -2,6 +2,7 @@ build-timeout:latest
 configuration-as-code:latest
 git:latest
 github-branch-source:latest
+job-dsl:latest
 ldap:latest
 mailer:latest
 matrix-auth:latest

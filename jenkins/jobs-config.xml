@@ -15,17 +15,20 @@
     <triggers></triggers>
     <concurrentBuild>false</concurrentBuild>
     <builders>
-        <hudson.plugins.groovy.Groovy>
-            <groovyName>(Default)</groovyName>
-            <parameters></parameters>
-            <scriptParameters></scriptParameters>
-            <javaOpts></javaOpts>
-            <classPath></classPath>
-            <scriptSource class='hudson.plugins.groovy.FileScriptSource'>
-                <scriptFile>./jenkins/createJob.groovy</scriptFile>
-            </scriptSource>
-            <properties></properties>
-        </hudson.plugins.groovy.Groovy>
+        <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.77">
+            <targets>createJob.groovy</targets>
+            <usingScriptText>false</usingScriptText>
+            <sandbox>false</sandbox>
+            <ignoreExisting>false</ignoreExisting>
+            <ignoreMissingFiles>false</ignoreMissingFiles>
+            <failOnMissingPlugin>false</failOnMissingPlugin>
+            <failOnSeedCollision>false</failOnSeedCollision>
+            <unstableOnDeprecation>false</unstableOnDeprecation>
+            <removedJobAction>IGNORE</removedJobAction>
+            <removedViewAction>IGNORE</removedViewAction>
+            <removedConfigFilesAction>IGNORE</removedConfigFilesAction>
+            <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+        </javaposse.jobdsl.plugin.ExecuteDslScripts>
         <hudson.tasks.Shell>
             <command>echo Hello World</command>
         </hudson.tasks.Shell>
