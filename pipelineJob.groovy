@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-
-        stage('go to the seed job workspace') {
-            steps {
-                sh "cd ../../seed-job/workspace/"
-            }
-        }
         stage('check maven & java version') {
             steps {
                 sh "mvn -v"

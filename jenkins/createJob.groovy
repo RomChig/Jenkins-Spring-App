@@ -1,8 +1,24 @@
-pipelineJob('pipelineJob') {
+//pipelineJob('pipelineJob') {
+//    definition {
+//        cps {
+//            script(readFileFromWorkspace('pipelineJob.groovy'))
+//            sandbox()
+//        }
+//    }
+//}
+
+pipelineJob('pipeline-job') {
     definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/RomChig/Jenkins-Spring-App.git'
+                    }
+                    branch 'main'
+                    script(readFileFromWorkspace('pipelineJob.groovy'))
+                }
+            }
         }
     }
 }
