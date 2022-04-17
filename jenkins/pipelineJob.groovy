@@ -1,34 +1,38 @@
 pipeline {
     agent any
     stages {
-        stage('check maven & java version') {
-            steps {
-                sh "mvn -v"
-                sh "java -version"
+        node {
+            stage('check maven & java version') {
+                steps {
+                    withMaven(maven: 'maven-3') {
+                        sh "mvn -v"
+                        sh "java -version"
+                    }
+                }
             }
-        }
 
-        stage('unit tests') {
-            steps {
-                sh './mvnw test'
+            stage('unit tests') {
+                steps {
+                    sh './mvnw test'
+                }
             }
-        }
 
-        stage('package') {
-            steps {
-                sh './mvnw package'
+            stage('package') {
+                steps {
+                    sh './mvnw package'
+                }
             }
-        }
 
-        stage('report') {
-            steps {
-                step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+            stage('report') {
+                steps {
+                    step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+                }
             }
-        }
 
-        stage('artifact') {
-            steps {
-                step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+            stage('artifact') {
+                steps {
+                    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+                }
             }
         }
     }
