@@ -2,10 +2,12 @@ pipeline {
     agent any
     stages {
         stage('check maven & java version') {
-            withMaven {
-                sh "./mvnw -v"
+            steps {
+                withMaven {
+                    sh "./mvnw -v"
+                }
+//                sh "java -version"
             }
-                sh "java -version"
         }
 
         stage('unit tests') {
