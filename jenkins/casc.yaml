@@ -11,3 +11,6 @@ jenkins:
       permissions:
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false

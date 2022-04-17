@@ -7,7 +7,7 @@ pipelineJob('pipeline-job') {
                         url 'https://github.com/RomChig/Jenkins-Spring-App.git'
                     }
                     branch 'main'
-                    scriptPath('pipelineJob.groovy')
+                    scriptPath('./jenkins/pipelineJob.groovy')
                 }
             }
         }
