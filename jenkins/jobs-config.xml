@@ -3,11 +3,6 @@
     <actions/>
     <description>Create a new job</description>
     <keepDependencies>false</keepDependencies>
-<!--    <properties>-->
-<!--        <com.coravy.hudson.plugins.github.GithubProjectProperty>-->
-<!--            <projectUrl>https://github.com/RomChig/Jenkins-Spring-App/</projectUrl>-->
-<!--        </com.coravy.hudson.plugins.github.GithubProjectProperty>-->
-<!--    </properties>-->
     <canRoam>true</canRoam>
     <disabled>false</disabled>
     <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
