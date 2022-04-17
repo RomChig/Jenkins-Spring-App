@@ -1,4 +1,6 @@
 FROM jenkins/jenkins:latest-jdk11
+USER root
+RUN  apt-get update && apt-get install -y maven
 ARG plugins_path=/usr/share/jenkins/ref/plugins.txt
 ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc.yaml
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
