@@ -7,7 +7,7 @@ pipeline {
         stage('check maven & java version') {
             steps {
                 sh "./mvnw -v"
-                sh "java -version"
+//                sh "java -version"
             }
         }
 
