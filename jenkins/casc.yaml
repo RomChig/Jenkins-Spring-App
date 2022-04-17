@@ -1,7 +1,18 @@
 jenkins:
+  systemMessage: "Automating Jenkins Setup using Docker and Jenkins Configuration as Code\n\n"
+  remotingSecurity:
+    enabled: true
   securityRealm:
     local:
       allowsSignup: false
       users:
-        - id: 'admin'
-          password: 'password'
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+unclassified:
+  location:
+    url: http://127.0.0.1:8080/
