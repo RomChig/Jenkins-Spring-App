@@ -16,7 +16,7 @@ pipelineJob('pipeline-job') {
                         url 'https://github.com/RomChig/Jenkins-Spring-App.git'
                     }
                     branch 'main'
-                    script(readFileFromWorkspace('pipelineJob.groovy'))
+                    script('pipelineJob.groovy')
                 }
             }
         }
