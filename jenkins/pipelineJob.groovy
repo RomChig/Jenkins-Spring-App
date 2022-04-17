@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    stages {
-        node {
+    node {
+        stages {
             stage('check maven & java version') {
                 steps {
                     withMaven(maven: 'maven-3') {
