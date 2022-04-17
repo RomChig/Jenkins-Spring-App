@@ -1,8 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'M3'
-        jdk '11'
+        maven 'apache-maven-3.0.1'
     }
     stages {
         stage('check maven & java version') {
