@@ -1,13 +1,16 @@
 pipeline {
     agent any
-    tools {
-        maven
-    }
     stages {
+        stage("Go to root folder") {
+            steps {
+                sh "cd .."
+            }
+        }
+
         stage('check maven & java version') {
             steps {
                 sh "./mvnw -v"
-//                sh "java -version"
+                sh "java -version"
             }
         }
 
