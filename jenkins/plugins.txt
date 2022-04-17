@@ -2,3 +2,4 @@ authorize-project:latest
 job-dsl:latest
 workflow-aggregator:latest
 git:latest
+pipeline-maven-3.10.0
