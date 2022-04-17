@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    scm {
-        github('RomChig/Jenkins-Spring-App', 'main')
-    }
     stages {
         stage('check maven & java version') {
             steps {
