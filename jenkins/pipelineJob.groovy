@@ -10,13 +10,13 @@ pipeline {
 
         stage('unit tests') {
             steps {
-                sh './mvnw test'
+                sh 'mvn test'
             }
         }
 
         stage('package') {
             steps {
-                sh './mvnw package'
+                sh 'mvn package'
             }
         }
 
