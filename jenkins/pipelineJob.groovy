@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'maven' }
     stages {
         stage('check maven & java version') {
             steps {
