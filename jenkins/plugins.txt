@@ -3,3 +3,5 @@ job-dsl:latest
 workflow-aggregator:latest
 git:latest
 pipeline-maven:3.10.0
+docker-plugin:1.2.8
+docker-workflow:1.28
