@@ -1,12 +1,14 @@
 pipeline {
     agent any
+    tools {
+        maven 'M3'
+        jdk '11'
+    }
     stages {
         stage('check maven & java version') {
             steps {
-                withMaven {
-                    sh "./mvnw -v"
-                }
-//                sh "java -version"
+                sh "./mvnw -v"
+                sh "java -version"
             }
         }
 
